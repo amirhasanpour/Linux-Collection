@@ -23,3 +23,25 @@ mv file/folder_name folder_name => move file/folder_name to folder_name
 rm file_name => remove file_name file
 
 rm folder_name -r => remove folder_name folder
+
+ctrl + l == clear
+
+ls *.file_postfix => show the list of the files with file_postfix format
+
+ls -a => show the list of the hidden files
+
+cd /home/amir/Desktop/ => an example for complete addressing
+
+cd /etc/pki/ => an example for direct addressing with etc
+
+sudo passwd root => set a new password for root access
+
+su => switching to the root
+
+su amir => an example for switching from root to normal user named amir
+
+cal => show the calendar
+
+date => show the date
+
+man command => description and the types of the command (for example: man ls)
