@@ -1,0 +1,25 @@
+pwd => print current directory
+
+cd .. => go back from the current directory
+
+ls => show the list of the directory
+
+cd directory_name => go to directory_name directory
+
+mkdir folder_name => create folder folder_name in current directory
+
+cd ~ => go to the root directory
+
+clear => clear the terminal
+
+touch txt => create a txt file in current directory
+
+cat file_name => show the content of the file_name
+
+cp file/folder_name folder_name => copy file/folder_name to folder_name
+
+mv file/folder_name folder_name => move file/folder_name to folder_name
+
+rm file_name => remove file_name file
+
+rm folder_name -r => remove folder_name folder
