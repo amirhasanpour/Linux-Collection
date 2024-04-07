@@ -45,3 +45,43 @@ cal => show the calendar
 date => show the date
 
 man command => description and the types of the command (for example: man ls)
+
+whereis command => show where the command types is stored
+
+find -name file_name => find the file that named file_name (case sensitive)
+
+find -iname file_name => find the file that named file_name (not case sensitive)
+
+find . -size +50k -and -size -20M => find the file in current directory that has space between 50 kilo bite to 20 mega bite
+
+find . -mmin -120 => find all the file that changed in 120 minute ago
+
+find / -mtime -2 => find all the file that changed in 2 days ago
+
+history => show the lastes commands that used in terminal by user
+
+less txt_file => show the content of the txt file and then you can enter /expected_word for see where and how many expected_word, repeated in the text_file
+
+echo $variable => show the value of variable (you can define a variable in linux like programming languages)
+
+unset variable => unset the value of variable
+
+sudo apt-get install software_name => install software_name software
+
+sudo apt-get remove software_name => remove software_name software
+
+sudo apt-get upgrade => upgrade repository
+
+head -5 /etc/passwd => show the first 5 lines from passwd in etc
+
+tail -10 /etc/passwd => show the last 5 lines from passwd in etc
+
+head -5 /etc/passwd | tail -2 => show the last 2 lines from the first 5 lines from passwd in etc
+
+grep 'word_name' txt_file => see where and how many word_name, repeated in the text_file (case sensetive)
+
+grep -i 'word_name' txt_file => see where and how many word_name, repeated in the text_file (not case sensetive)
+
+grep -in 'word_name' txt_file => see where and how many in wich lines word_name, repeated in the text_file (not case sensetive)
+
+grep -ir 'word_name' ./* => see in which files in current diractory, where and how many word_name, repeated
