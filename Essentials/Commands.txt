@@ -85,3 +85,43 @@ grep -i 'word_name' txt_file => see where and how many word_name, repeated in th
 grep -in 'word_name' txt_file => see where and how many in wich lines word_name, repeated in the text_file (not case sensetive)
 
 grep -ir 'word_name' ./* => see in which files in current diractory, where and how many word_name, repeated
+
+sort -n file_name => sort the numbers in the file_name
+
+wc -l file_name => show the number of the lines in file_name
+
+wc -w file_name => show the number of the words in file_name
+
+wc -c file_name => show the size of the file_name (bite)
+
+zip file_name.zip file_name => get a copy of file_name and zip the copy
+
+unzip file_name.zip => get a copy of file_name.zip and unzip the copy
+
+gzip file_name => zip file_name
+
+gzip -d file_name.gz => unzip file_name.gz
+
+cd / => go to the root
+
+cat /etc/group => show the groups content in system
+
+cat /etc/passwd => show the passwords in system
+
+sudo cat /etc/shadow => show the hash passwords content in system
+
+sudo useradd user_name => add a new user_name user to the /etc/passwd
+
+sudo useradd -m user_name => add a new user_name user to the /etc/passwd and make a home directory for that user
+
+sudo useradd user_name -e 10-10-2025 => add a new user_name user to the /etc/passwd with expire date 10-10-2025
+
+sudo useradd user_name -g root => add a new user_name user to the /etc/passwd in group root
+
+sudo passwd user_name => set a password for user_name user
+
+sudo passwd -d user_name => delete user_name user password
+
+sudo userdel user_name => delete user_name user from /etc/passwd
+
+id => show the uid, gid and .. for the current user
