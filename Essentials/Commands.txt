@@ -125,3 +125,19 @@ sudo passwd -d user_name => delete user_name user password
 sudo userdel user_name => delete user_name user from /etc/passwd
 
 id => show the uid, gid and .. for the current user
+
+sudo groupadd group_name => add group_name group
+
+sudo groupdel group_name => delete group_name group
+
+sudo groupadd -g800 group_name => add group_name group with gid 800
+
+sudo groupmod -n new_group_name group_name => change the name of group group_name to new_group_name
+
+sudo usermod -G root user_name => add user_name user to the group root
+
+sudo usermod -L user_name => Lock the user_name user
+
+sudo usermod -U user_name => Unlock the user_name user
+
+ls -ltrh => show the list of the files in current directory, additional their owners and groups
