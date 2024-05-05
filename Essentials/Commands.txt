@@ -141,3 +141,41 @@ sudo usermod -L user_name => Lock the user_name user
 sudo usermod -U user_name => Unlock the user_name user
 
 ls -ltrh => show the list of the files in current directory, additional their owners and groups
+
+sudo chown owner_name file_name => change the owner of the file_name file to owner_name owner
+
+sudo chgrp group_name file_name => change the group of the file_name file to group_name group
+
+sudo chmod permission_number file_name => give the permission_number permission to the file_name (permission_number is a linux permission number, for example 770)
+
+ifconfig => show the interfaces of network cards and their IPs
+
+ifconfig -a => show the interfaces of network cards and their IPs (show the disables too)
+
+ifdown network_card_name => disable network_card_name network card
+
+ifup network_card_name => enable network_card_name network card
+
+sudo ifconfig network_card_name new_ip_address netmask netmask_number => cahnge the ip address of network_card_name to new_ip_address, with netmask_number netmask
+
+sudo apt-get install gcc => update the kernel tools
+
+mv directory_name .directory_name => hide directory_name directory
+
+mv .directory_name directory_name => unhide .directory_name directory
+
+uniq -c file_name => show the file_name numbers with their repeated number
+
+uniq -d file_name => show the file_name repeated numbers
+
+uniq -D file_name => show the file_name repeated numbers and their repeated
+
+uniq -u file_name => show the file_name numbers without repeated numbers
+
+uniq -u file_name1 > file_name2 => show the file_name1 numbers without repeated numbers and move them to the file_name2
+
+diff file_name1 file_name2 => show the differences between tow file
+
+finger user_name => show the login information about user_name user
+
+w => show the information about all users in system
