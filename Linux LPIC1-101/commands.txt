@@ -1,0 +1,37 @@
+cd /dev/ => go to the devices directory (use ls to see the devices on system)
+
+cd /proc/ => go to the process files (use ls to see the process)
+
+cat meminfo => see the information from system RAM
+
+cat cpuinfo => see the information from system CPU
+
+cd /sys/ => HAL files directory (use ls to see the files)
+
+cd /dev/ => udev files directory (use ls to see the files)
+
+lsusb => see the information about system usb
+
+lshw => see the information about system hardware (it is better to use command as super user)
+
+lspci => show all the system pcies
+
+lspci | grep VGA => show the graphic system port
+
+lsmod => show the list of the modules in system that diagnosised by kernel
+
+sudo rmmod module_name => disactive the module_name module system
+
+modprob module_name => active the module_name module system
+
+pstree => show the information about systemd process in shape of tree
+
+ps => show the process in current directory
+
+ps -u => show the process in system
+
+sudo dmesg => show all the kernel logs in system
+
+cd /var/log/ => go to the log files directory (use ls to see the log files / cat dmseg / cat syslog -> show the stored logs)
+
+cd /boot/grub/ => go to the grub files directory (use ls to see the grub files) / then you can use: 'cat grub.cfg' to see the grub configuration in system
