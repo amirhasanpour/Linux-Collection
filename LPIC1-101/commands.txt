@@ -1,0 +1,307 @@
+cd /dev/ => go to the devices directory (use ls to see the devices on system)
+
+cd /proc/ => go to the process files (use ls to see the process)
+
+cat meminfo => see the information from system RAM
+
+cat cpuinfo => see the information from system CPU
+
+cd /sys/ => HAL files directory (use ls to see the files)
+
+cd /dev/ => udev files directory (use ls to see the files)
+
+lsusb => see the information about system usb
+
+lshw => see the information about system hardware (it is better to use command as super user)
+
+lspci => show all the system pcies
+
+lspci | grep VGA => show the graphic system port
+
+lsmod => show the list of the modules in system that diagnosised by kernel
+
+sudo rmmod module_name => disactive the module_name module system
+
+modprob module_name => active the module_name module system
+
+pstree => show the information about systemd process in shape of tree
+
+ps => show the process in current directory
+
+ps -u => show the process in system
+
+sudo dmesg => show all the kernel logs in system
+
+cd /var/log/ => go to the log files directory (use ls to see the log files / cat dmseg / cat syslog -> show the stored logs)
+
+cd /boot/grub/ => go to the grub files directory (use ls to see the grub files) / then you can use: 'cat grub.cfg' to see the grub configuration in system
+
+sudo aptitude install package_name => install package using aptitude (for example jcal package)
+
+aptitude search specific_files => find the specific_files files in system (for example vim files)
+
+sudo apt-get autoremove specific_files => unistall all specific_files files in system (for example vim files)
+
+sudo apt-get autoremove => remove all files or libraries in system that is not complete and unistall them
+
+cd in directory /etc/apt -> cat sources.list => show all debian sources that use for updating repository
+
+pkgs.org => a website for downloading debian package
+
+cd in directory that your debian_packeg.deb package exist in there -> dpkg -i debian_packeg.deb => install debian_packeg.deb package
+
+sudo dpkg -P package_name => unistall all dependency files of package_name package (for example jcal package)
+
+sudo dpkg -s package_name => show the status of package_name package (for example jcal package)
+
+dpkg -L package_name => show the directories that package_name package files are there
+
+dpkg -S one_of_the_directories_of_a_package => show wich packege files in directory one_of_the_directories_of_a_package, are stored
+
+---- dynamic and static packages ----
+
+ldd dynamic_package_directory => show the libraries, that dynamic_package is using from them (for finding dynamic_package_directory, use "whereis dynamic_package" command) -> example1: ldd /usr/bin/ls ---- example2: ldd /usr/bin/google-chrome (will not working)
+
+cd in directory /etc => ls ld* => show the all files and directories that related to the libraries
+
+cd in directory /etc => cat ld.so.conf => show the directory that include directories of libraries in system
+
+export LD_LIBRARY_PATH=/home/user_directory/your_library => interduce your_library library to the system
+
+----	----	----	----	----
+
+---- root directory ----
+
+tree -d / | less => show less of root directory in shape of a tree
+
+tree -d => show all of root directory in shape of a tree
+
+ls /bin
+
+ls /etc
+
+ls /proc
+
+ls /tmp
+
+ls /var
+
+ls/log
+
+ls /boot
+
+ls /dev
+
+ls /opt
+
+ls /root
+
+ls /snap
+
+ls /sbin
+
+ls /sys
+
+ls /usr
+
+----	----	----	----	----
+
+---- partitions ----
+
+sudo fdisk /dev/sda => show the partitions of system (press p for print informations)
+
+cd /dev => in this directory sda1, sda2, sda3 are the main partitions of system
+
+sudo parted => show the partitions of system (press p for print informations)
+
+sudo gparted => show the partitions of system (graphical)
+
+----	----	----	----	----
+
+---- meta character & control operators ----
+
+use \ before meta character for ignore it -> example: "echo hello \; my friend"
+
+use ; for execute multi command -> example: "ls -ltrh ; pwd ; ifconfig"
+
+use && for execute first command and if it did not execute, the seconde command will not execute
+
+use || for execute first command and if it execute, the seconde command will not execute
+
+----	----	----	----	----
+
+---- process ----
+
+xeyes => open xeyes app with unuseable terminal (press ctrl+c to kill the process or press ctrl+z for stop the process and send it to the background)
+
+xeyes & => open xeyes app with useable terminal (press ctrl+c to kill the process or press ctrl+z for stop the process and send it to the background)
+
+xclock => open xeyes app with unuseable terminal (press ctrl+c to kill the process or press ctrl+z for stop the process and send it to the background)
+
+xclock & => open xeyes app with useable terminal (press ctrl+c to kill the process or press ctrl+z for stop the process and send it to the background)
+
+sleep 10000 & => system will go to sleep after 10000 seconds (with useable terminal)
+
+jobs => show all the frontground and background processes
+
+kill process_id => close the process (standard)
+
+kill -9 process_id or percent_process => close the process (force)
+
+ps -aux => show all the process in system
+
+top => show all the process in system with more details (then you can press k, and type PID of a process to kill it) | (press q for exit)
+
+free -m => show all information about system RAM
+
+uptime => show the boot time of oprator system
+
+ps -ef | wc -l => show the number of system processes
+
+ps -lf => see the information about process nice (nice is a number between -20 to +20 and it refer to value and priority of process, -20 has most priority)
+
+renice -n positive_nice_number process_id => change the nice of a process with  process_id process id
+
+sudo renice -n negative_nice_number process_id => change the nice of a process with  process_id process id
+
+----	----	----	----	----
+
+sudo fsck /dev/your_partition => check the health saving of your_partition partition
+
+df /expected_path/ => see how much space is used by /expected_path/
+
+df -h /expected_path/ => see how much space is used by /expected_path/ (human readable)
+
+df -hT /expected_path/ => see how much space is used by /expected_path/ (human readable + type)
+
+du /expected_path/ => see how much space each part of /expected_path/ is use
+
+du -h /expected_path/ => see how much space each part of /expected_path/ is use
+
+du -hs /expected_path/ => see how much space is used by most space part in /expected_path/
+
+sudo mount /dev/source_path /media/target_path => mount source_path to target_path
+
+sudo mount -o ro /dev/source_path /media/target_path => mount source_path to target_path (with read only option)
+
+sudo mount -o rw /dev/source_path /media/target_path => mount source_path to target_path (with read and write option)
+
+sudo unmount /media/target_path => unmount target_path
+
+cat /etc/fstab => see the static file system information
+
+---- hard link and soft link ----
+
+ls -il => ls with inodes
+
+ln file_name file_name_hardLink => create a hard link that named file_name_hardLink for file_name
+
+ln -s file_name file_name_softLink => create a soft link that named file_name_softLink for file_name
+
+----	----	----	----	----
+
+hostname => see the hostname of the server
+
+ls /etc/host* => see 5 important host directory /etc/host.conf  /etc/hostid  /etc/hostname  /etc/hosts  /etc/hosts.allow  /etc/hosts.deny (you can open this files with an editor and change them)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

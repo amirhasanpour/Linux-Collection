@@ -1,0 +1,55 @@
+---------------- configuration apache web server ----------------
+
+1 - cd /etc/apache2
+
+2 - ls
+
+3 - sudo subl apache2.conf
+
+4 - go to the directory section (line 153)
+
+5 - create a directory by copy all <Directory /var/www/> under it
+
+6 - change <Directory /var/www/> to <Directory /var/www2/> in directory that you created
+
+7 - cd /var/
+
+8 - sudo mkdir www2
+
+9- cd www2
+
+10 - sudo mkdir html
+
+11 - cd html
+
+12 - sudo subl index.html
+
+13 - open your firefox and enter 127.0.0.1 then go to page source and copy other html of body and paste it to index.html file that you created (you can change the html file)
+
+14 - cd /etc/apache2/
+
+15 - ls
+
+16 - cd sites-enabled/
+
+17 - sudo subl 000-default.conf
+
+18 - change <VirtualHost *:80> tag to <VirtualHost 127.0.0.1>
+
+19 - copy all <VirtualHost 127.0.0.1> under it
+
+20 - under #ServerName www.example.com enter ServerName your_domain.com
+
+21 - in front of ServerAdmin, enter info@your_domain.com
+
+22 - change ErrorLog and CustomLog (example : ErrorLog ${APACHE_LOG_DIR}/error_amirhp.com.log | CustomLog ${APACHE_LOG_DIR}/access_amirhp.com.log combined)
+
+23 - sudo reboot
+
+24 - sudo subl /etc/hosts
+
+25 - add 127.0.0.1 your_domain.com
+
+26 - go to firefox and enter your domain
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----

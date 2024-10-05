@@ -1,0 +1,25 @@
+---------------- send message to other users in linux ----------------
+
+sudo ssh user_name@server_ip => ssh to server_ip server with user_name user
+
+sudo nano /etc/motd => edit a file that shows the message of your server when other servers ssh to your server
+
+mesg => show that your server can recive message or not
+
+mesg n => disable reciving message from other servers
+
+mesg y => enable reciving message from other servers
+
+who => see the servers that are conected to your server
+
+who -T => see the servers that are conected to your server and theit ability to recive messages from other servers
+
+write server_name pts/pts_number => write a privet message for server_name server (press ctrl + d to finish the writing)
+
+wall you_message => send your_message message to all users that conected to your server
+
+notify-send "message_title" "message_content" => notify a message with message_title title and message_content content
+
+sleep 15;notify-send "message_title" "message_content" => notify a message with message_title title and message_content content after 15 seconde
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----

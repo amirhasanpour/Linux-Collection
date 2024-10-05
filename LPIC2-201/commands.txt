@@ -1,0 +1,225 @@
+---------------- monitoring CPU and RAM and IO ----------------
+
+top => show the process in system that are using from thr hardware
+
+htop => show the process in system that are using from thr hardware (graphical mode)
+
+vmstat => show the virtual memory
+
+free => show the information about RAM
+
+free -m => show the information about RAM (megabite)
+
+w => show the information about CPU
+
+ps => show the process in system
+
+ps -alef => show all process in system
+
+iostat => show the information about operating system that is using from the hardware
+
+mpstat => check the multi status of CPU
+
+sudo apt-get install sysstat -y => install sysstat
+
+sudo nano /etc/default/sysstat | change ENABLED to "true" => active sysstat
+
+sar -u repetition_seconde repetition_number => show the sysstat information every repetition_seconde seconde for repetition_number times
+
+sudo apt-get install nmon
+
+nmon => a tool for monitoring
+
+sudo apt-get install monitorix
+
+your_hostname:8080/monitorix => a tool for monitoring
+
+lsof => show the open files list
+
+sudo iotop => show the process in system that are using from thr hardware (show the information about disk read and disk write)
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- install and config sysstat ----------------
+
+1 - sudo apt-get install sysstat -y
+
+2 - sudo nano /etc/default/sysstat | change ENABLED to "true" => active sysstat
+
+3 - sudo systemctl enable sysstat
+
+4 - sudo systemctl start sysstat
+
+5 - sudo systemctl status sysstat
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- monitoring Network ----------------
+
+ifconfig
+
+ifconfig -a
+
+sudo apt-get install iptraf-ng
+
+sudo iptraf-ng => a tool for network monitoring
+
+sudo tcpdump -i your_network_card > network_log.txt => write your_network_card network logs to network_log.txt
+
+iftop => show all the network packet (send and recive)
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- kernel ----------------
+
+ls /boot/
+
+uname => show the kernel name
+
+uname -r => show the kernel version name
+
+uname --help => show the information about uname command
+
+cd /lib/modules | cd kernel_version_name | cd kernel | ls
+
+cd /usr/src/ | ls => show the kernel headers
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- modules ----------------
+
+lsmod => show the list of modules in system
+
+modinfo module_name => show the information about module_name module
+
+man modprobe => show description about modprobe command
+
+sudo modprobe -r module_name => remove module_name module
+
+sudo modprobe module_name => add module_name module
+
+ls /lib/modules/
+
+ls /lib/modules/kernel_name_version/
+
+ls /etc/
+
+cd /etc/modules-load.d/ | cat modules.conf | file modules.conf | ls -ltrh
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- file systems and btrfs ----------------
+
+sudo apt-get install btrfs-progs => install btrfs
+
+sudo mkfs.btrfs -f /dev/your_sda => change partition type to btrfs (make sure before that the /dev/your_sda has unmounted and after aplay the changes, you should mount it again)
+
+sudo unmount /dev/your_sda => unmount /dev/your_sda
+
+sudo mount /dev/your_sda /mnt/ => mount /dev/your_sda to /mnt/
+
+sudo btrfs filesystem show => show the btrfs partitions in system
+
+sudo btrfs subvolume create sub_volume_name => create subvolume for btrfs partitions (use this command in /mnt/ path or every path that you have made your btrfs partition)
+
+sudo btrfs subvolume list /mnt/ => show the list of the btrfs partitions
+
+sudo btrfs subvolume snapshot sub_volume_name snapshot_sub_volume_name => create snapshot_sub_volume_name from sub_volume_name (like backup)
+
+e2label /dev/your_sda label_name => applay label_name label to /dev/your_sda partition (note: this command just support ext2, ext3 and ext4 hard partition types)
+
+btrfs filesystem label /dev/your_sda label_name => applay label_name label to /dev/your_sda btrfs partition (make sure before that the /dev/your_sda has unmounted and after aplay the changes, you should mount it again)
+
+uuidgen => generate a unique uuid
+
+blkid => show the id of block devices
+
+man mdadm => show description about mdadm command
+
+mdadm -C /dev/your_md -l raid_level -n disk_numbers /dev/your_sda1 /dev/your_sda2 ... => raid disk_numbers numbers together with raid_level level (the raid will save as your_md and the disks your_sda1, your_sda2 and ... will raid together)
+
+mdadm --misc --detail /dev/your_md => show the details about your_md raid
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+---------------- create samba shairing area ----------------
+
+1 - cd /etc/samba
+
+2 - ls
+
+3 - sudo subl smb.conf
+
+4 - declare new area in section # Windows clients look for this share name as a source of downloadable
+
+5 - write a comment for it
+
+6 - write a path for it like : /srv/your_area_name
+
+7 - cd /srv/
+
+8 - sudo mkdir your_area_name
+
+9 - cd your_area_name/
+
+10 - sudo touch your_file.txt
+
+11 - sudo chmod 777 your_file.txt
+
+12 - ls -ltrh
+
+13 - cd ..
+
+14 - sudo chmod 777 your_area_name
+
+15 - ls -ltrh
+
+16 - sudo smbclient -L //localhost -U user_name
+
+17 - su
+
+18 - mount -o username=user_name,noperm //localhost/your_area_name /mnt
+
+19 - ls /mnt/
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----

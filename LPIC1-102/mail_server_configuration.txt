@@ -1,0 +1,57 @@
+1 - sudo DEBIAN_PRIORITY=low apt install postfix => install postfix mail server
+
+2 - systemctl status postfix => check status of postfix mail server
+
+3 - sudo dpkg-reconfigure postfix => reconfigure postfix mail server
+
+4 - cd /etc/postfix/
+
+5 - ls
+
+6 - cat main.cf
+
+7 - su
+
+8 - nano main.cf
+
+9 - change myhostname
+
+10 - cd sasl/
+
+11 - nano sasl_passwd
+
+12 - write [smtp.gmail.com]:587 your_email@gmail.com:your_password
+
+13 - save theee changes and exit
+
+14 - postmap /etc/postfix/sasl/sasl_passwd
+
+15 - nano /etc/postfix/main.cf
+
+16 - write these for the relayhost : [smtp.gmail.com]:587
+
+17 - write these at the end of the main.cf
+
+	smtp_sasl_auth_enable = yes
+	smtp_sasl_security_options = noanonymous
+	smtp_sasl_password_maps = hash:/etc/postfix/sasl/sasl_passwd
+	smtp_sasl_security_level = encrypt
+	smtp_tls_CAfile = /etc/ssl/certs/ca-certifcates.crt
+	
+18 - save theee changes and exit
+
+19 - systemctl restart postfix
+
+20 - system status postfix
+
+21 - sendmail target_email@gmail.com
+	
+     From : source_mail@gmail.com
+     
+     Subject : write your subject
+     
+     write your content.
+     
+     .
+
+

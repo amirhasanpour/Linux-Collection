@@ -1,0 +1,31 @@
+RunLevels in Linux
+
+man runlevel => show the information about runlevel command
+
+0 = Halt
+1 = Single User
+3 = Terminal Mode
+5 = Graphical Mode
+6 = Reboot
+
+------------------------------------------------------------------------
+
+runlevel => show the previous and current runlevel
+
+telinit runlevel_number => change the runlevel according to runlevel_number
+
+------------------------------------------------------------------------
+
+---- change the boot loader runlevel ----
+
+reboot your system
+
+press shift before boot
+
+press e for edit the grub
+
+in the end of the handoff press space and then write one of the runlevel numbers that you want
+
+press F10
+
+------------------------------------------------------------------------

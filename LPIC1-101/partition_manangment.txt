@@ -1,0 +1,35 @@
+----------------------------- partition manangment -----------------------------
+
+man lsblk => show the hards with their partitions in system
+
+sudo fdisk /dev/sda => go to the partition manangment
+
+press m => see the help
+
+press p => see information about system partitions
+
+press d and after that, select a partition number => delete partition
+
+press n and after that, select a partition type, and after that, select a partition number, and for the last, determain sectors => add a new partition
+
+press l => see the list of the known partition types
+
+press t and after that, select a partition number, and after that, select partition type id => change partition type
+
+press w => write changes to disk and exit
+
+press q => quit without saving changes
+
+--------------------------------------------------------------------------------
+
+sudo mkfs -t ext4(or every partition type) /dev/your_sda => after delete and add a new partition, you should use this command. this command will format your_sda partiotion and make file system for you partition in ext4 format
+
+sudo mkswap /dev/your_sda => change the structure of partition /dev/your_sda to swap
+
+mount => show the hard disks information
+
+
+
+
+
+

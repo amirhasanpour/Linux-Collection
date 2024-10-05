@@ -1,0 +1,34 @@
+---------------- config ssl on nginx ----------------
+
+1 - cd /etc/nginx/sites-available/
+
+2 - sudo cp default default.bak
+
+3 - sudo mkdir /etc/nginx/ssl
+
+4 - sudo chmod 700 /etc/nginx/ssl
+
+5 - sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/example.key -out /etc/nginx/ssl/example.crt
+
+6 - cd /etc/nginx/sites-available/
+
+7 - sudo subl default
+
+8 - add return 301 https://amirhp$request_uri; under defaulte server configuration and add this server:
+
+server {
+	listen 443 ssl;
+
+	ssl_certificate /etc/nginx/ssl/example.crt;
+	ssl_certificate_key /etc/nginx/ssl/example.key;
+
+	location / {
+		root /usr/share/nginx/html;
+		index index.html index.htm;
+	}
+
+}
+
+9 - sudo nginx -s reload
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----

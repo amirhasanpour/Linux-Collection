@@ -1,0 +1,11 @@
+---------------- move files to a server using ssh ----------------
+
+1 - sudo tar czf file_name.tar.gz file_name => create, zip and compress  file_name and convert it to file_name.tar.gz
+
+2 - rsync -ah file_name.tar.gz user_name@server_ip:/home/user_name/Desktop/ => move file_name.tar.gz file to server_ip server with user_name user and Desktop directory
+
+3 - tar xf file_name.tar.gz => extract file_name.tar.gz file
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+dd if=/dev/your_sda1 of=/dev/your_sda2 => backup your_sda1 partition to your_sda2 partition

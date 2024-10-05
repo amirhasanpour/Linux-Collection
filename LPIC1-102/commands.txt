@@ -1,0 +1,218 @@
+---------------- login shell and none login shell ----------------
+
+cat /etc/profile => see the bash scripts of login shell
+
+cd to /etc/profile.d, then ls -ltrh => see the files for shell user login
+
+cd /home/your_user/, then ls -ltrha  => see all home directory file (after that, cat this files : .profile | .bashrc | .bash_history | .bash_logout)
+
+bash => go to the bash shell (you can type exit for exit from the bash shell)
+
+cat /etc/bash.bashrc => see the bash scripts of none login shell
+
+cd /etc/skel/ and after that ls -ltrh => show the skeleton of home directory
+
+systemctl status display-manager => see the information about system display manager
+
+sudo dpkg-reconfigure display_manager => change display manager to display_manager
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- alias ----------------
+
+alias alias_name='path or command' => declare an alias (temporary)
+
+unalias alias_name => remove alias (temporary)
+
+cd /home/your_user/ and after that, nano .bashrc and declare alias_name => declare an alias (permanent)
+
+cd /home/your_user/ and after that, nano .bashrc and delete alias_name => remove an alias (permanent)
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- functions ----------------
+
+function_name () {
+> operation
+> ...
+> }
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- write bash file ----------------
+
+1 - in the directory that you want, nano file_name.sh
+
+2 - in the first of the file_name write #! bin/bash
+
+3 - write your script
+
+4 - exit from the file_name
+
+5 - give executeable permission to file_name by using chmod
+
+6 - use ./file_name.sh for execute the file
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- cron and jobs ----------------
+
+crontab -l => see the crons
+
+crontab -e => edit the crons (add or remove a cron)
+
+at now +10 min => open a job that will execute 10 minutes later (you should define the job)
+
+atq => see the system jobs
+
+atrm job_number => delete a job with job_number number
+
+cat /etc/crontab => see the system crons
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- date and time ----------------
+
+date => show the date
+
+jcal => show the jalali calendar
+
+tzselect => change the time zone
+
+sudo dpkg-reconfigure tzdata => change the time zone in graphical mode
+
+cd /usr/share/zoneinfo and after that, use ls => see the time zone configuration in system
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- logs ----------------
+
+cd /var/log/ and after that, use ls => see the log directories
+
+cat this files -> auth.log | boot.log | kernel.log | syslog
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- printers ----------------
+
+systemctl status cups => see the status of cups (print status)
+
+cd /etc/cups and after that, cat cupsd.conf => see the configuration of cups
+
+enter localhost:631 in your browser => go to the printer setting
+
+lpq => see the default printer and it's jobs
+
+lprm job_number => delete job with job_number number
+
+lpc status => see the default printer queuing and enabling
+
+cupsdisable printer_name => disable printer_name printer enabling
+
+cupsenable printer_name => enable printer_name printer enabling
+
+cupsreject printer_name => disable printer_name printer queuing
+
+cupsaccept printer_name => enable printer_name printer queuing
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- network ----------------
+
+ifconfig => show the interfaces of network cards and their IPs
+
+ifconfig -a => show the interfaces of network cards and their IPs (show the disables too)
+
+ifdown network_card_name => disable network_card_name network card
+
+ifup network_card_name => enable network_card_name network card
+
+sudo ifconfig network_card_name new_ip_address netmask netmask_number => cahnge the ip address of network_card_name to new_ip_address, with netmask_number netmask
+
+netstat -na => see the internet connections and domain sockets
+
+netstat -tuna => see the active internet connections
+
+netstat -pa => see the internet connections and domain sockets + Foreign Address
+
+lsof -i => see the connections that internet is using them
+
+nmap localhost => check the system ports
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- systemctl ----------------
+
+systemctl => show the information about systemd
+
+systemctl status app_name => see app_name status
+
+systemctl start app_name => start app_name process
+
+systemctl stop app_name => stop app_name process
+
+systemctl restart app_name => restart app_name process
+
+systemctl enable app_name => enable app_name
+
+systemctl disable app_name => disable app_name
+
+systemctl isolate app_name => stop all the process in system, exept app_name process
+
+cat /etc/services => show the services in system
+
+cd /lib/systemd/system/
+
+cd /etc/systemd/system/
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- permissions and limits ----------------
+
+w => show the online users in system
+
+last => show the users log
+
+ulimit -a => show the limits in system
+
+ulimit -n open_files_number => change the number of open files limit to open_files_number
+
+nano /etc/sudoers => open the files that can change the permissions in system (you can define or change permission for users and groups)
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- ssh ----------------
+
+ssh root_name@ip_address => ssh to a server with root permission
+
+1- cd /root/
+
+2 - la -a
+
+3 - cd .ssh/
+
+4 - ls
+
+5 - cat known_hosts
+
+6 - ssh-keygen
+
+7 - cat id_rsa.pub
+
+8 - cat id_rsa
+
+9 - ssh-agent
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- users ----------------
+
+sudo useradd user_name -c 'user_comment' => add user user_name with user_comment comment
+
+sudo adduser user_name => add user user_name with specification
+
+cat /etc/passwd/ => see the system users
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+

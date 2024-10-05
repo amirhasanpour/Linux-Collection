@@ -1,0 +1,30 @@
+---------------- LVM Partition ----------------
+
+pv => show phisical valumes commands
+
+vg => show group valumes commands
+
+lv => show logical valumes commands
+
+sudo pvcreate /dev/your_sda => create your_sda phisical valume
+
+sudo pvscan => show the phisical valumes information
+
+sudo pvdisplay /dev/your_sda => show the your_sda phisical valumes information
+
+sudo vgcreate valume_group_name /dev/your_sda1 /dev/your_sda2 ... => create valume group, using phisical valumes your_sda1, your_sda2 ...
+
+vgscan => show the group valumes information
+
+sudo lvcreate -L sum_of_valume_groups_in_megabite valume_group_name => create a logical valume, using valume group valume_group_name
+
+sudo mkfs.ext4 /dev/valume_group_name/logical_valume_name => create ext4 file system for logical_valume_name logical valume partition
+
+sudo vgextend valume_group_name /dev/your_sda => extend the valume_group_name valume group
+
+sudo lvextend -L sum_of_valume_groups_and_new_partition_in_megabite /dev/valume_group_name/logical_valume_name
+
+sudo resize2fs /dev/valume_group_name/logical_valume_name => resize logical_valume_name to new valume after extend
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+

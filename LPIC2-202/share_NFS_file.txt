@@ -1,0 +1,27 @@
+---------------- share NFS file ----------------
+
+1 - cd /mnt/
+
+2 - sudo mkdir shareFile
+
+3 - ls -ltrh
+
+4 - sudo chown nobody:nogroup shareFile
+
+5 - ls -ltrh
+
+6 - sudo chmod 777 shareFile
+
+7 - ls -ltrh
+
+8 - sudo subl /etc/exports
+
+9 - write this line : /mnt/shareFile your_ip/your_netmask(rw,sync,no_subtree_check)
+
+10 - sudo showmount -e
+
+11 - sudo exportfs -a
+
+12 - sudo systemctl restart nfs-kernel-server.service
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----

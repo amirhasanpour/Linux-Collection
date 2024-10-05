@@ -1,0 +1,196 @@
+---------------- dns ----------------
+
+sudo apt-get install bind9 bind9utils => install bind
+
+cd /etc/bind => directory of bind configuration (use ls to see them)
+
+cat named.conf.options
+
+cat named.conf
+
+cat named.conf.local
+
+cat named.conf.default-zones
+
+cat db.local => show the bind local host database server configuration
+
+sudo systemctl status bind9.service => show the status of bind
+
+nslookup site_name.com => show the ip of site_name.com
+
+nslookup site_name.com ip_address => show the ip of site_name.com using ip_address ip
+
+nslookup -query=ns site_name.com => query for geting name servers of site_name.com
+
+dig site_name.com => show the details of site_name.com server
+
+dig +short site_name.com => show the ip addresses of site_name.com server
+
+dig q-type site_name.com => show more details of site_name.com server
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- apache ----------------
+
+sudo apt-get install apache2 => install apache
+
+firefox | 127.0.0.1 => go to a browser (firefox) and enter 127.0.0.1 to see the apache web server page
+
+sudo systemctl status apache2 => show the status of apache
+
+man apache2
+
+sudo apt-get install lynx
+
+sudo apachectl status => show the status of apache using apachectl
+
+sudo apachectl fullstatus => show the status of apache using apachectl (more detail)
+
+cd /etc/apache2/
+
+sudo cat apache2.conf => see the configuration of apache
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- nginx ----------------
+
+sudo apt-get install nginx => install nginx
+
+cd /usr/share/nginx/
+
+cd /etc/nginx/
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- ssl ----------------
+
+sudo a2enmod ssl => enable ssl modules
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- samba ----------------
+
+sudo apt-get install samba => install samba
+
+man samba
+
+cd /etc/samba/
+
+sudo cat smb.conf => see the configuration of samba
+
+testparm => check samba file sharing
+
+sudo smbpasswd -a user_name => add user user_name to samba file sharing
+
+sudo apt-get install smbclient => install samba client
+
+sudo smbclient -L //localhost -U user_name => add user user_name to samba client
+
+sudo apt-get install cifs-utils => install command interface file system
+
+sudo modprobe cifs => add cifs to kernel
+
+sudo pdbedit -L => show samba database users
+
+sudo pdbedit -Lv => show samba database users (more detail)
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- NFS (network file system) ----------------
+
+sudo apt-get install nfs-kernel-server => install NFS
+
+sudo apt-get install nfs-common => install NFS common
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- DHCP (dynamic host configuration protocol) ----------------
+
+sudo apt-get install isc-dhcp-server => install DHCP
+
+man dhcpd.conf
+
+cd /etc/dhcp/
+
+cat dhcpd.conf
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- PAM ----------------
+
+cat /etc/pam.conf
+
+cd /etc/pam.d/
+
+file sudo
+
+cat sudo
+
+cat su
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- LDAP ----------------
+
+sudo apt-get install slapd ldap-utils => install LDAP for server and client
+
+cd /etc/ldap
+
+cat ldap.conf
+
+sudo cat /etc/ssl/certs/ca-certificates.crt
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- Mail Service ----------------
+
+cd /var/spool/mail/
+
+sudo cat root
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- Security ----------------
+
+cat /etc/services => show the server ports
+
+telnet domain_name port_number => connect to port_number port of domain_name server
+
+netstat -na | grep LISTEN => show all the ports that are listening
+
+netstat --tcp --listen => show all the ports that are listening with tcp
+
+nmap -A localhost => see all the localhost ports detail
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- NAT ----------------
+
+sudo apt-get install fail2ban => install fail to ban tool
+
+cd /etc/fail2ban/
+
+sudo cat jail.conf
+
+cat /var/log/auth.log
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+---------------- Firewal ----------------
+
+sudo apt-get install iptables => install iptables firewal
+
+man iptables
+
+sudo iptables -L => see the policies and chaines of iptables
+
+sudo iptables -P OUTPUT DROP => firewal prevent connection from server to web
+
+sudo iptables -P OUTPUT ACCEPT => firewal execute connection from server to web
+
+sudo iptables -A INPUT server_ip -j DROP => firewal prevent connection from server to server_ip server
+
+sudo iptables -A OUTPUT -i network_cart_name => firewal prevent connection from network_cart_name network cart to web
+
+----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+

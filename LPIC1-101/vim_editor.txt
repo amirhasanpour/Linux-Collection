@@ -1,0 +1,26 @@
+--------------------------- Vim Editor ---------------------------
+
+vi txt_file => open the txt_file
+
+press i => go to the insert mode (you can press esc to quit insert mode)
+
+press w => go to the first of the next word
+
+press e => go to the last of the next word
+
+press b => go to the first of the previous word
+
+press r => go to the replace mode (after, you can press your expected char for replacing and after that, you can press esc to quit replace mode)
+
+press x => remove repeted char
+
+press a_number x => remove a_number repeted char
+
+press u => using for undo
+
+press o => create a new line in next line and go to the insert mode
+
+press O => create a new line in previous line and go to the insert mode
+
+for quit from the editor -> 1- type :q! (exit and not save) / 2- type :wq (exit and save)
+

@@ -1,0 +1,11 @@
+ctrl + g => see th help
+
+ctrl + w => go to search
+
+ctrl + e => go to the first word
+
+ctrl + a => go to the last word
+
+ctrl + x => exit
+
+alt + u => undo
